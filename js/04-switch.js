@@ -2,7 +2,36 @@
  * Оператор switch
  */
 
-const username = "Mango";
+// const username = "Mango";
+
+// console.log(checkCase(username));
+
+// function checkCase(username) {
+//   switch (username) {
+//     case "Poly":
+//       // console.log("case 1");
+//       return "case 1";
+//     case "John":
+//       // console.log("case 2");
+//       return "case 2";
+//     case "Mango":
+//       // console.log("case 3");
+//       return "case 3";
+//     default:
+//       // console.log("default block");
+//       return "default block";
+//   }
+// }
+
+// if (username === "Poly") {
+//   console.log("case 1");
+// } else if (username === "John") {
+//   console.log("case 2");
+// } else if (username === "Mango") {
+//   console.log("case 3");
+// } else {
+//   console.log("default block");
+// }
 
 /**
  * Виконай рефакторинг коду задачі використовуючи switch.
@@ -13,17 +42,33 @@ const username = "Mango";
  * Якщо до дедлайну 3+ днів - виведи рядок "Date in the future"
  */
 
-const daysUntilDeadline = 5;
+// const daysUntilDeadline = 1;
 
-if (daysUntilDeadline === 0) {
-  console.log("Today");
-} else if (daysUntilDeadline === 1) {
-  console.log("Tomorrow");
-} else if (daysUntilDeadline === 2) {
-  console.log("Overmorrow");
-} else {
-  console.log("Date in the future");
-}
+// if (daysUntilDeadline === 0) {
+//   console.log("Today");
+// } else if (daysUntilDeadline === 1) {
+//   console.log("Tomorrow");
+// } else if (daysUntilDeadline === 2) {
+//   console.log("Overmorrow");
+// } else if (daysUntilDeadline >= 3) {
+//   console.log("Date in the future");
+// } else {
+//   console.log("Wrong data!");
+// }
+
+// switch (daysUntilDeadline) {
+//   case 0:
+//     console.log("Today");
+//     break;
+//   case 1:
+//     console.log("Tomorrow");
+//     break;
+//   case 2:
+//     console.log("Overmorrow");
+//     break;
+//   default:
+//     console.log("Date in the future");
+// }
 
 /*
  * Напиши скрипт вибору опції доставки товару.
@@ -36,7 +81,21 @@ if (daysUntilDeadline === 0) {
  * - 'Вам передзвонить менеджер'
  */
 
-const option = 1;
-let message = "";
+// const option = 3;
+// let message = "";
 
-console.log(message);
+// switch (option) {
+//   case 1:
+//     message = "Ви зможете забрати товар завтра з 12:00 у нашому офісі";
+//     break;
+//   case 2:
+//     message = "Кур'єр доставить замовлення завтра з 9:00 до 18:00";
+//     break;
+//   case 3:
+//     message = "Посилка буде відправлена сьогодні";
+//     break;
+//   default:
+//     message = "Вам передзвонить менеджер";
+// }
+
+// console.log(message);
