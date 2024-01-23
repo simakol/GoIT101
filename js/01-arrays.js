@@ -10,14 +10,16 @@
  */
 
 const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
-console.table(courses);
-console.log([0]);
-console.log([1]);
-console.log([2]);
-console.log([3]);
 
-courses[1] = "Jacob";
-courses[3] = "Adrian";
+console.table(courses);
+console.log(courses[0]);
+console.log(courses[1]);
+console.log(courses[2]);
+console.log(courses[3]);
+console.log(courses[4]);
+
+courses[0] = "HTML5";
+courses[1] = "CSS3";
 console.table(courses);
 
 console.log(courses.length);
