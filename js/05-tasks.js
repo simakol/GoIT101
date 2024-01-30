@@ -6,20 +6,58 @@
  * - виводить вміст об'єкта user у форматі ключ:значення використовуючи Object.keys() та for...of
  */
 
-const user = {
-  name: "Mango",
-  age: 20,
-  hobby: "html",
-  premium: true,
-};
+// const user = {
+//   name: "Mango",
+//   age: 20,
+//   hobby: "html",
+//   premium: true,
+// };
+
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
+
+// const keys = Object.keys(user);
+
+// for (const key of keys) {
+//   console.log(`${key}: ${user[key]}`);
+// }
+
+// console.log(keys);
 
 /**
  * У нас є об'єкт, де зберігаються зарплати нашої команди. Напишіть код для
  * підсумовування всіх зарплат і збережіть результат у змінній sum.
  * Повинно вийти 390. Якщо об'єкт salaries порожній, то результат має бути 0.
  */
+
 const salaries = {
   John: 100,
   Ann: 160,
-  Pete: 130,
+  Pete: "130",
 };
+
+/*
+1. ініціалізувати змінну суми зі значенням 0
+2. отримуємо масив всіх значень [100, 160, 130]
+3. перебираємо масив
+4. додаємо кожне значення з масиву до змінної суми
+*/
+
+let sum = 0; // крок 1, змінна суми
+
+const salariesArr = Object.values(salaries); // крок 2, масив зарплат
+
+// крок 3, перебір масиву зарплат
+for (let salary of salariesArr) {
+  salary = Number(salary); // переводимо в число
+
+  // якщо в результаті переведення ми отримали значення НАН (тей випадок, коли значення неможливо перевести до числового типу даних)
+  if (isNaN(salary)) {
+    continue; // переходимо на наступну ітерацію
+  }
+
+  sum += salary; // крок 4, накопичення всіх зарплат в одну змінну
+}
+
+console.log(sum);

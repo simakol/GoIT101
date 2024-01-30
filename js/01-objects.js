@@ -17,10 +17,19 @@ const playlist = {
   isFavourite: true,
 };
 
+console.log(playlist);
+console.log(playlist.name);
+console.log(playlist.rating);
+playlist.newProp = "something new";
+playlist.rating = 4;
+
 /**
  * -----------------------------------
  */
 const propertyName = "tracks";
+
+console.log(playlist[propertyName]);
+console.log(playlist["rating"]);
 
 /**
  * -----------------------------------
@@ -30,3 +39,8 @@ function foo(values) {
   console.log(values.a);
   console.log(values.b);
 }
+
+foo({
+  a: 5,
+  b: 10,
+});
