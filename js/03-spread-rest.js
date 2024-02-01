@@ -8,19 +8,34 @@
  * - Створення об'єкта
  */
 
-const numbers = [];
+// spread - розпилює дані на окремі значення, пишеться після знаку дорінює в контексті масивів або обʼєктів
+
+// const num1 = [1, 2, 3];
+// const num2 = [5, 6, 7];
+// const num3 = [9, 10, 11];
+
+// const numbers = [...num1, 4, ...num2, 8, ...num3];
 // console.log(numbers);
 
 /**
  * Пошук найменшої аьо найбільшої температури (числа)
  */
-const temps = [18, 14, 12, 21, 17, 29, 24];
+// const temps = [18, 14, 12, 21, 17, 29, 24];
+
+// const max = Math.max(...temps); //  Math.max(18, 14, 12, 21, 17, 29, 24)
+// const min = Math.min(...temps);
+
+// console.log(max);
+// console.log(min);
 
 /**
  * Створення масиву і тип за посиланням
  */
-const a = [{ x: 1 }, { y: 2 }, { z: 3 }];
-const b = a;
+
+// const a = [{ x: 1 }, { y: 2 }, { z: 3 }];
+// const b = [...a];
+
+// a[0].x = 100
 
 // console.log("a: ", a);
 // console.log("b: ", b);
@@ -28,19 +43,22 @@ const b = a;
 /*
  * Поєднуємо кілька масивів в один через spread
  */
-const lastWeekTemps = [1, 2, 3];
-const currentTemps = [4, 5, 6];
-const nextWeekTemps = [7, 8, 9];
+// const lastWeekTemps = [1, 2, 3];
+// const currentTemps = [4, 5, 6];
+// const nextWeekTemps = [7, 8, 9];
 
-const allTemps = [];
+// const allTemps = [...lastWeekTemps, ...currentTemps, ...nextWeekTemps];
 // console.log(allTemps);
 
 /*
  * Створення об'єкта
  */
-const objA = { x: 1, y: 2 };
-const objB = { x: 0, z: 3 };
-const objC = {};
+// const objA = { x: 1, y: 2 };
+// const objB = { x: 0, z: 3 };
+// const objC = {
+//   ...objA,
+//   ...objB
+// };
 
 // console.log(objC);
 
@@ -58,6 +76,9 @@ const userSettings = {
   hideSidebar: true,
 };
 
-const finalSettings = {};
+const finalSettings = {
+  ...defaultSettings,
+  ...userSettings,
+};
 
-// console.log(finalSettings);
+console.log(finalSettings);
