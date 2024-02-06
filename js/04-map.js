@@ -5,6 +5,14 @@
  * - Повертає новий масив такої ж довжини
  */
 
+// суть цього методу - повернути новий масив, кожен елемент якого ви зміните за допомогою умови колбек функції
+
+// const numbers = [1, 2, 3, 4, 5];
+// const modNumbers = numbers.map((value) => (value + 10) * 2) // те, що ви повертаєте на кожній ітерації колбек функції - стає новим елементом масиву
+
+// console.log(numbers)
+// console.log(modNumbers)
+
 const allCars = [
   { make: "Honda", model: "CR-V", amount: 14, price: 24045 },
   { make: "Honda", model: "Accord", amount: 2, price: 22455 },
@@ -22,19 +30,20 @@ const allCars = [
  * Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів.
  */
 
-const getModels = (cars) => {};
+const getModels = (cars) => cars.map((car) => car.model);
 
-console.table(getModels(allCars));
+// console.table(getModels(allCars));
 
 /**
  * Нехай функція makeCarsWithDiscount повертає новий масив об'єктів із змінним
  * значенням властивості price залежно від переданої знижки.
  */
 
-const makeCarsWithDiscount = (cars, discount) => {};
+// const makeCarsWithDiscount = (cars, discount) =>
+//   cars.map((car) => ({ ...car, price: car.price * (1 - discount) }));
 
-console.table(makeCarsWithDiscount(allCars, 0.2));
-console.table(makeCarsWithDiscount(allCars, 0.4));
+// console.table(makeCarsWithDiscount(allCars, 0.2));
+// console.table(makeCarsWithDiscount(allCars, 0.4));
 
 const players = [
   { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
@@ -49,8 +58,17 @@ console.table(players);
  * Збільшуємо кількість годин гравця за id
  */
 
-const playerIdToUpdate = "player-3";
+const playerIdToUpdate = "player-5";
 
-const updatedPlayers = players.map((player) => {});
+const updatedPlayers = players.map((player) => {
+  if (player.id === playerIdToUpdate) {
+    return {
+      ...player,
+      timePlayed: player.timePlayed + 100,
+    };
+  }
+
+  return { ...player };
+});
 
 console.log(updatedPlayers);
