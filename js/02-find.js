@@ -5,15 +5,22 @@
  * - Повертає перший елемент, що задовольняє умові або undefined
  */
 
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 7, 8, 10, 60, 15, 20, 25];
 
-const number = numbers;
+// const number = numbers.find((number) => number % 2 === 0 && number % 5 === 0);
+
+// const numbersFilter = numbers.filter(
+//   (number) => number % 2 === 0 && number % 5 === 0
+// );
+
 // console.log(number);
+
+// console.log(numbersFilter);
 
 /**
  * -----------------------------
  */
-const cars = [
+const allCars = [
   { make: "Honda", model: "CR-V", type: "suv", price: 24045 },
   { make: "Honda", model: "Accord", type: "sedan", price: 22455 },
   { make: "Mazda", model: "Mazda 6", type: "sedan", price: 24195 },
@@ -29,7 +36,7 @@ const cars = [
 /**
  * Шукаємо машину за моделлю
  */
-const getCarByModel = (cars, model) => {};
+// const getCarByModel = (cars, model) => cars.find((car) => car.model === model);
 
 // console.log(getCarByModel(allCars, "F-150"));
 // console.log(getCarByModel(allCars, "CX-9"));
@@ -38,7 +45,8 @@ const getCarByModel = (cars, model) => {};
 /**
  * Шукаємо машину за типом кузова
  */
-const getCarByType = (cars, type) => {};
+
+// const getCarByType = (cars, type) => cars.find((car) => car.type === type);
 
 // console.log(getCarByType(allCars, "sedan"));
 // console.log(getCarByType(allCars, "truck"));

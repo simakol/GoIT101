@@ -8,10 +8,12 @@
  *    - якщо коллбек повернув false елемент НЕ додається в масив, що повертається
  */
 
-const numbers = [5, 10, 15, 20, 25];
+// const numbers = [5, 10, 15, 20, 25];
 
-const filteredNumbers = numbers;
-console.log(filteredNumbers);
+// const filteredNumbers = numbers.filter((number) => number <= 10); // [5, 10]
+
+// console.log(numbers);
+// console.log(filteredNumbers);
 
 /**
  * ---------------------------
@@ -104,7 +106,8 @@ const allCars = [
  * значення параметра threshold.
  */
 
-const filterByPrice = (cars, threshold) => {};
+// const filterByPrice = (cars, threshold) =>
+//   cars.filter((car) => car.price < threshold);
 
 // console.table(filterByPrice(allCars, 30000));
 // console.table(filterByPrice(allCars, 25000));
@@ -114,7 +117,7 @@ const filterByPrice = (cars, threshold) => {};
  * властивість onSale яких true.
  */
 
-const getCarsOnSale = (cars) => {};
+// const getCarsOnSale = (cars) => cars.filter((car) => car.onSale);
 
 // console.table(getCarsOnSale(allCars));
 
@@ -123,7 +126,8 @@ const getCarsOnSale = (cars) => {};
  * зі значенням параметра type.
  */
 
-const getCarsWithType = (cars, type) => {};
+// const getCarsWithType = (cars, type) => cars.filter((car) => car.type === type);
 
 // console.table(getCarsWithType(allCars, "suv"));
 // console.table(getCarsWithType(allCars, "sedan"));
+// console.log(getCarsWithType(allCars, "electro"));
