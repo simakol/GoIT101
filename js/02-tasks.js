@@ -2,7 +2,7 @@ function foo() {
   console.log("foo -> this", this);
 }
 
-foo(); // Який this ???
+// foo(); // Який this ??? - undefined
 
 /**
  * -------------------------
@@ -17,13 +17,13 @@ const book = {
   },
 };
 
-book.showThis(); // Який this ???
+// book.showThis(); // Який this ??? - book
 
 const outerShowThis = book.showThis;
-outerShowThis(); // Який this ???
+// outerShowThis(); // Який this ??? - undefined
 
 const outerShowTitle = book.showTitle;
-outerShowTitle(); // Який this ???
+// outerShowTitle(); // Який this ??? - TypeError
 
 /**
  * Напишіть метод calcTotalPrice(stoneName), який приймає назву каменю і
@@ -37,10 +37,19 @@ const chopShop = {
     { name: "Sapphire", price: 1400, quantity: 7 },
     { name: "Ruby", price: 800, quantity: 2 },
   ],
-  calcTotalPrice(stoneName) {},
+  calcTotalPrice(stoneName) {
+    const searchStone = this.stones.find((stone) => stone.name === stoneName);
+
+    if (searchStone) {
+      return searchStone.price * searchStone.quantity;
+    }
+
+    return 0;
+  },
 };
 
-console.log(chopShop.calcTotalPrice("Emerald")); // 5200
-console.log(chopShop.calcTotalPrice("Diamond")); // 8100
-console.log(chopShop.calcTotalPrice("Sapphire")); // 9800
-console.log(chopShop.calcTotalPrice("Ruby")); // 1600
+// console.log(chopShop.calcTotalPrice("Emerald")); // 5200
+// console.log(chopShop.calcTotalPrice("Diamond")); // 8100
+// console.log(chopShop.calcTotalPrice("Sapphire")); // 9800
+// console.log(chopShop.calcTotalPrice("Ruby")); // 1600
+// console.log(chopShop.calcTotalPrice("Ruby11")); //
