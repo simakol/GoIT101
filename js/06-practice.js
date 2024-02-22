@@ -51,7 +51,55 @@ const cars = [
   },
 ];
 
+/*
+1. відмальовуємо карточки автомобілів, створюючи розмітку через map та join, показуючи її на екрані за допомогою innerHTML
+2. повісили обробник подій по сабміту на форму
+3. зібрали дані форми через елементи форми
+4. запускаємо фільтрацію масиву автомобілів по критеріям з даних форми(тобто по запиту і по марці або моделі), якщо обʼєкт в масиві підходить - ми його додаємо в масив результату, якщо ні - не додаємо
+5. Відмальовуємо нову розмітку на основі масиву результатів який ми отримали в наслідок фільтрації 
+
+*/
+
 const elements = {
   form: document.querySelector(".js-form"),
   container: document.querySelector(".js-list"),
 };
+
+elements.container.innerHTML = createMarkup(cars); // задаємо базову розмітку всіх автомобілів
+elements.form.addEventListener("submit", handleSearch);
+
+function handleSearch(event) {
+  event.preventDefault();
+  const formElements = event.currentTarget.elements;
+
+  const options = formElements.options.value;
+  const query = formElements.query.value;
+
+  console.log(options);
+  console.log(query);
+
+  // car[options] - динамічне звернення до властивості обʼєкту, константа options це значення поля select option, яке вибирає користувач, воно може бути або car або type. Ми знаємо, що в обʼєкті автомобіля є поля car і type. Але не знаємо що точно вибере користувач, тому зберігаємо результат вибору у констату і динамічно звертаємось до властивості обʼєкту. Тобто, замість car[options]  може бути або car.type або car.car
+
+  const result = cars.filter(
+    (car) => car[options].toLowerCase() === query.toLowerCase()
+  ); // фільтруємо по запиту, перевіряючи кожен обʼєкт на відповідність нашому запиту в інпуті, якщо тип або марка машини рівна запиту користувача, то ця машина нам підходить
+
+  if (result.length === 0) {
+    alert("Такої машини не знайдено!");
+  } else {
+    elements.container.innerHTML = createMarkup(result);
+  }
+}
+
+function createMarkup(arr) {
+  return arr
+    .map(
+      ({ id, car, type, price, img }) => `<li class="car-card" data-id="${id}">
+  <img src="${img}" alt="${type}" class="car-image">
+  <h2 class="car-title">${car}</h2>
+  <h3 class="car-type">${type}</h3>
+  <span class="car-price">${price}$</span>
+</li>`
+    )
+    .join("");
+}
